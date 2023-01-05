@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "573893453432",
+    "project_id": "uas-praktikum-46d0e",
+    "storage_bucket": "uas-praktikum-46d0e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573893453432:android:66eb8e98a22a04c4acaf8d",
+        "android_client_info": {
+          "package_name": "com.example.izbakery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "573893453432-gt4n2040fdl86g7o565qv1juf8hqrct6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHLnh8jvPM_ei8II_FNhcs_2AeZRND6u4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "573893453432-gt4n2040fdl86g7o565qv1juf8hqrct6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "573893453432-78190qqr4ueadjbgpfqfo4jd1bjah13g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.praktikumFirebaseLogin"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573893453432:android:fbaeec12ed59e9b4acaf8d",
+        "android_client_info": {
+          "package_name": "com.example.praktikum_firebase_login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "573893453432-gt4n2040fdl86g7o565qv1juf8hqrct6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHLnh8jvPM_ei8II_FNhcs_2AeZRND6u4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "573893453432-gt4n2040fdl86g7o565qv1juf8hqrct6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "573893453432-78190qqr4ueadjbgpfqfo4jd1bjah13g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.praktikumFirebaseLogin"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
