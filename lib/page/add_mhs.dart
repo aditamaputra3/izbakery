@@ -50,7 +50,7 @@ class _AddMhsState extends State<AddMhs> {
                       decoration: InputDecoration(hintText: "NAMA"),
                       validator: (String? value) {
                         if (value!.isEmpty) {
-                          return 'Nama dibutuhkan';
+                          return 'Naman dibutuhkan';
                         }
                         return null;
                       },
