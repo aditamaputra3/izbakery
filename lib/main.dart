@@ -10,7 +10,7 @@ import 'package:izbakery/page/login_page.dart';
 import 'package:izbakery/page/register_page.dart';
 import 'package:izbakery/page/update_mhs.dart';
 import 'package:izbakery/page/welcome_page.dart';
-import 'package:izbakery/page/add_mhs.dart';
+import 'package:izbakery/page/add_product.dart';
 import 'package:izbakery/page/data_mhs_page.dart';
 import 'firebase_options.dart';
 void main() async {
@@ -59,8 +59,8 @@ class MyApp extends StatelessWidget {
         'registration_screen': (context) => RegistrationScreen(),
         'login_screen': (context) => LoginScreen(),
         'home_screen': (context) => HomeScreen(),
-        'add_mhs': (context) => AddMhs(),
-        'data_mhs': (context) => DataMhs(),
+        'add_produk': (context) => AddProduk(),
+        'data_produk': (context) => DataMhs(),
         'update_mhs': (context) => UpdateMhs(),
       },
     );
