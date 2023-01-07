@@ -45,18 +45,16 @@ class ItemCard extends StatelessWidget {
                 height: 40,
                 width: 60,
                 child: ElevatedButton(
+                  
                     child: Center(
                         child: Icon(Icons.edit,
                             color: Color.fromARGB(255, 255, 255, 255))),
                     onPressed: () {
-                      style:
-                      ElevatedButton.styleFrom(
-                        primary: Color.fromARGB(
-                            255, 187, 111, 53), // Background color
-                      );
                       if (onUpdate != null) onUpdate!();
                       Navigator.pushNamed(context, 'update_produk');
-                    }),
+                    }
+                    ),
+                    
               ),
               SizedBox(
                 height: 40,

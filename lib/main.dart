@@ -8,7 +8,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:izbakery/page/home_page.dart';
 import 'package:izbakery/page/login_page.dart';
 import 'package:izbakery/page/register_page.dart';
-import 'package:izbakery/page/update_mhs.dart';
+import 'package:izbakery/page/update_product..dart';
 import 'package:izbakery/page/welcome_page.dart';
 import 'package:izbakery/page/add_product.dart';
 import 'package:izbakery/page/data_produk_page.dart';
@@ -31,7 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: 3),
+        Duration(seconds: 4),
         () => Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => LoginScreen())));
   }
@@ -39,10 +39,23 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
-      child: new SvgPicture.asset(
-                'lib/assets/Baker-rafiki.svg'),
-    );
+      color: Color.fromARGB(255, 94, 52, 24),
+    child: Column(
+            children: <Widget>[
+              SvgPicture.asset(
+                'lib/assets/Baker-rafiki.svg',
+              ),
+              //const SizedBox(height: 20.0),
+              Text(
+                'IZ*BAKERY',
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                ),
+              ),   
+            ],
+    ));
   }
 }
 
@@ -61,7 +74,7 @@ class MyApp extends StatelessWidget {
         'home_screen': (context) => HomeScreen(),
         'add_produk': (context) => AddProduk(),
         'data_produk': (context) => DataProduk(),
-        'update_mhs': (context) => UpdateMhs(),
+        'update_produk': (context) => UpdateProduk(),
       },
     );
   }

@@ -7,6 +7,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:izbakery/page/add_product.dart';
 import 'package:izbakery/page/data_produk_page.dart';
 import 'package:izbakery/page/item_card.dart';
+import 'package:izbakery/page/login_page.dart';
 import 'package:izbakery/page/welcome_page.dart';
 import 'package:izbakery/util/rounded_button.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -106,7 +107,13 @@ class _HomeScreenState extends State<HomeScreen> {
             child: GestureDetector(
               onTap: () {
                 _auth.signOut();
-                Navigator.pop(context, 'login_page');
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LoginScreen(),
+                  ),
+                );
               },
               child: const Icon(
                 Icons.power_settings_new,
