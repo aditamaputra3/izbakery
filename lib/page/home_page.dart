@@ -105,19 +105,6 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.only(right: 20.0),
             child: GestureDetector(
               onTap: () {
-                //
-                Navigator.pushNamed(context, 'add_mhs');
-              },
-              child: const Icon(
-                Icons.add,
-                size: 26.0,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 20.0),
-            child: GestureDetector(
-              onTap: () {
                 _auth.signOut();
                 Navigator.pop(context, 'login_page');
               },

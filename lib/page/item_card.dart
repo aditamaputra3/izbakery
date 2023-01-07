@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 
 class ItemCard extends StatelessWidget {
   final String nama;
-  final int nrp;
+  final String jenis;
+  final int harga;
+  final int stock;
+  final String deskripsi;
 //// Pointer to Update Function
   final Function? onUpdate;
 //// Pointer to Delete Function
   final Function? onDelete;
-  ItemCard(this.nama, this.nrp, {this.onUpdate, this.onDelete});
+  ItemCard(this.nama, this.jenis, this.harga, this.stock, this.deskripsi,
+      {this.onUpdate, this.onDelete});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +21,7 @@ class ItemCard extends StatelessWidget {
       padding: const EdgeInsets.all(5),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: Colors.blue)),
+          border: Border.all(color: Color.fromARGB(255, 139, 65, 8))),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -31,7 +35,7 @@ class ItemCard extends StatelessWidget {
                 ),
               ),
               Text(
-                "$nrp ",
+                "Rp.$harga ",
               )
             ],
           ),
@@ -41,28 +45,27 @@ class ItemCard extends StatelessWidget {
                 height: 40,
                 width: 60,
                 child: ElevatedButton(
-// shape: CircleBorder(),
-// color: Colors.green[900],
                     child: Center(
-                        child: Icon(
-                      Icons.arrow_upward,
-                      color: Colors.white,
-                    )),
+                        child: Icon(Icons.edit,
+                            color: Color.fromARGB(255, 255, 255, 255))),
                     onPressed: () {
+                      style:
+                      ElevatedButton.styleFrom(
+                        primary: Color.fromARGB(
+                            255, 187, 111, 53), // Background color
+                      );
                       if (onUpdate != null) onUpdate!();
-                      Navigator.pushNamed(context, 'update_mhs');
+                      Navigator.pushNamed(context, 'update_produk');
                     }),
               ),
               SizedBox(
                 height: 40,
                 width: 60,
                 child: ElevatedButton(
-// shape: CircleBorder(),
-// color: Colors.red[900],
                     child: Center(
                         child: Icon(
                       Icons.delete,
-                      color: Colors.white,
+                      color: Color.fromARGB(255, 255, 255, 255),
                     )),
                     onPressed: () {
                       showDialog(

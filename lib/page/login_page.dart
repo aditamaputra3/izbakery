@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:izbakery/page/register_page.dart';
 import 'package:izbakery/util/rounded_button.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:flutter/material.dart';
 //code for designing the UI of our text field where the user writes his email
 

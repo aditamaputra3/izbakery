@@ -11,7 +11,7 @@ import 'package:izbakery/page/register_page.dart';
 import 'package:izbakery/page/update_mhs.dart';
 import 'package:izbakery/page/welcome_page.dart';
 import 'package:izbakery/page/add_product.dart';
-import 'package:izbakery/page/data_mhs_page.dart';
+import 'package:izbakery/page/data_produk_page.dart';
 import 'firebase_options.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -60,7 +60,7 @@ class MyApp extends StatelessWidget {
         'login_screen': (context) => LoginScreen(),
         'home_screen': (context) => HomeScreen(),
         'add_produk': (context) => AddProduk(),
-        'data_produk': (context) => DataMhs(),
+        'data_produk': (context) => DataProduk(),
         'update_mhs': (context) => UpdateMhs(),
       },
     );

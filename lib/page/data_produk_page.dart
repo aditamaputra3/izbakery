@@ -16,26 +16,35 @@ class DataProduk extends StatefulWidget {
 class _DataProduk extends State<DataProduk> {
   final _auth = FirebaseAuth.instance;
   final TextEditingController namaController = TextEditingController();
-  final TextEditingController nrpController = TextEditingController();
+  final TextEditingController jenisController = TextEditingController();
+  final TextEditingController hargaController = TextEditingController();
+  final TextEditingController stokController = TextEditingController();
+  final TextEditingController deskripsiController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
-    CollectionReference users = firestore.collection('users');
-    
+    CollectionReference produk = firestore.collection('produk');
+
     return Scaffold(
       appBar: AppBar(
         leading: null,
+        backgroundColor: Color.fromARGB(255, 139, 65, 8),
+        title: Text('Data Produk'),
         actions: <Widget>[
-          IconButton(
-              icon: Icon(Icons.close),
-              onPressed: () {
-                Navigator.pushNamed(context, 'home_screen');
-//Implement logout functionality
-              }),
+          Padding(
+            padding: const EdgeInsets.only(right: 20.0),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, 'add_produk');
+              },
+              child: const Icon(
+                Icons.add,
+                size: 26.0,
+              ),
+            ),
+          ),
         ],
-        title: Text('Data Mahasiswa'),
-        backgroundColor: Colors.lightBlueAccent,
       ),
       body: Center(
           child: Padding(
@@ -45,20 +54,22 @@ class _DataProduk extends State<DataProduk> {
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
             children: [
-//// VIEW DATA HERE
               StreamBuilder(
-                  stream: users.snapshots(),
+                  stream: produk.snapshots(),
                   builder: (_, snapshot) {
                     if (snapshot.hasData) {
                       return Column(
                         children: snapshot.data!.docs
-                            .map((e) => ItemCard((e.data() as dynamic)['nama'],
-                                    (e.data() as dynamic)['nrp'], 
+                            .map((e) => ItemCard(
+                                    (e.data() as dynamic)['nama'],
+                                    (e.data() as dynamic)['jenis'], 
+                                    (e.data() as dynamic)['harga'],
+                                    (e.data() as dynamic)['stock'],
+                                    (e.data() as dynamic)['deskripsi'], 
                                     onDelete: () {
-                                      users.doc(e.id).delete();
+                                  produk.doc(e.id).delete();
                                 }))
                             .toList() as List<Widget>,
-                            
                       );
                     } else {
                       return Text('Loading');
@@ -69,10 +80,7 @@ class _DataProduk extends State<DataProduk> {
           ),
         ]),
       )),
-       drawer: Drawer(
-// Add a ListView to the drawer. This ensures the user can scroll
-// through the options in the drawer if there isn't enough vertical
-// space to fit everything.
+      drawer: Drawer(
         child: ListView(
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
